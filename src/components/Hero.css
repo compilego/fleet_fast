@@ -1,0 +1,251 @@
+/* Hero.css */
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  background-color: var(--tertiary-color);
+  color: var(--primary-color);
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(26, 28, 32, 0.7); /* Slightly darker for better text contrast */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: #FFFFFF;
+  overflow: hidden;
+}
+
+.hero h1 {
+  font-size: 3.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: #FFFFFF;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+  color: #E2E8F0;
+  font-weight: 300;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 14px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn.btn-primary {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: 2px solid var(--accent-color);
+}
+
+.btn.btn-primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(224, 122, 95, 0.4);
+}
+
+.btn.btn-secondary {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+}
+
+.btn.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Scroll indicator styles */
+.scroll-indicator {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  opacity: 1;
+}
+
+.scroll-text {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.scroll-arrow {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 100vh; /* Full viewport height on mobile */
+    padding: 60px 0;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+    word-break: break-word;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 520px;
+    padding: 0 15px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px 18px;
+    font-size: 0.9rem;
+  }
+
+  .scroll-indicator {
+    margin-top: 30px;
+  }
+
+  .scroll-text {
+    font-size: 0.7rem;
+  }
+
+  .scroll-arrow {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 80vh;
+    padding: 40px 0;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+    margin-bottom: 15px;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-content {
+    padding: 0 12px;
+  }
+
+  .hero-buttons {
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+
+  .btn-primary {
+    animation: none !important;
+  }
+
+  .scroll-indicator {
+    margin-top: 20px;
+  }
+
+  .scroll-text {
+    font-size: 0.65rem;
+  }
+}
+
+/* Optional: add a subtle pulse animation to buttons */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(224, 122, 95, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(224, 122, 95, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(224, 122, 95, 0);
+  }
+}
+
+.btn-primary {
+  animation: pulse 2s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary {
+    animation: none;
+  }
+  .scroll-indicator {
+    animation: none;
+  }
+}
