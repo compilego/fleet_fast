@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
-import logo from '../assets/fleet_fast_1.png';
+import lightLogo from '../assets/fleet_fast_1.png';
+import darkLogo from '../assets/fleet_fast_2.png';
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -75,10 +77,14 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container container">
         <Link to="/" className="navbar-logo" onClick={closeMenu}>
-          <img src={logo} alt="FleetFast Logo" className="logo-img" />
-        </Link> 
+          <img
+            src={scrolled ? lightLogo : darkLogo}
+            alt="FleetFast Logo"
+            className="logo-img"
+          />
+        </Link>
 
-        {/* Desktop Menu - visible on larger screens*/ }
+        {/* Desktop Menu - visible on larger screens*/}
         <div className="navbar-menu desktop-menu">
           <ul>
             {navItems.map((item) => (
