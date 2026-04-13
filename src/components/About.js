@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import './About.css';
+import darkLogo from '../assets/image-truck.png';
+
 
 const About = () => {
   return (
@@ -15,8 +17,8 @@ const About = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="img-placeholder">
-            <img src="https://i.pinimg.com/736x/f3/26/31/f32631e3d760b89e9674ce07939b0f97.jpg" alt="Logistics Operations" />
-          </div>
+  <img src={darkLogo} alt="Truck" style={{ height: "500px", width: "100%", objectFit: "cover" }} />
+</div>
         </motion.div>
         <motion.div 
           className="about-content"
