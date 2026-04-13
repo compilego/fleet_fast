@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Hero.css';
 import heroVideo from '../assets/hero_video.mp4';
 
-// Animation variants for staggered children
+// Animation variants
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -24,15 +24,6 @@ const itemVariants = {
   },
 };
 
-// Word splitting for h1
-const splitWords = (text) => {
-  return text.split(' ').map((word, i) => (
-    <span key={i} style={{ display: 'inline-block', marginRight: '0.5rem' }}>
-      {word}
-    </span>
-  ));
-};
-
 const Hero = () => {
   return (
     <section id="home" className="hero">
@@ -46,40 +37,42 @@ const Hero = () => {
         <source src={heroVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+
       <div className="hero-overlay"></div>
+
       <motion.div
-        className="hero-content container"
+        className="hero-content"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        transition={{ type: "spring", stiffness: 300 }}
       >
         <motion.h1 variants={itemVariants}>
-          {splitWords("Intelligent Logistics.")} <br />
-          {splitWords("Seamless Delivery.")}
+          Reliable Logistics <br />
+          Fast & Secure Deliveries
         </motion.h1>
+
         <motion.p variants={itemVariants}>
-          Accelerate your fleet's potential with proactive dispatch and compliance.
+          We provide efficient transport and delivery solutions to move your goods safely, on time, every time.
         </motion.p>
+
         <motion.div
           className="hero-buttons"
           variants={itemVariants}
         >
-          <Link to="/services/dispatch" className="btn btn-primary">
-            Explore Services
+          <Link to="/contact" className="btn btn-primary">
+            Book a Service
           </Link>
-          <Link to="/contact" className="btn btn-secondary">
-            Get Started
+
+          <Link to="/services/dispatch" className="btn btn-secondary">
+            View Services
           </Link>
         </motion.div>
-        {/* Scroll indicator */}
+
         <motion.div
-          className="scroll-indicator"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          className="hero-contact"
+          variants={itemVariants}
         >
-          <span className="scroll-text">Scroll</span>
-          <div className="scroll-arrow">↓</div>
+          📞 +1 (877) 468-7701
         </motion.div>
       </motion.div>
     </section>
