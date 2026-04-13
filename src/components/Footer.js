@@ -10,31 +10,31 @@ const Footer = () => {
           <h2>Fleet<span>Fast</span></h2>
           <p>Your dedicated partner for logistics, compliance, dispatch, and comprehensive fleet management solutions.</p>
           <div className="social-links">
-            <a href="#" aria-label="LinkedIn">in</a>
-            <a href="#" aria-label="Twitter">tw</a>
-            <a href="#" aria-label="Facebook">fb</a>
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer">in</a>
+            <a href="https://twitter.com" target="_blank" rel="noreferrer">tw</a>
+            <a href="https://facebook.com" target="_blank" rel="noreferrer">fb</a>
           </div>
         </div>
 
         <div className="footer-col footer-links">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#why-us">Why Choose Us</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/#about">About Us</Link></li>
+            <li><Link to="/#services">Services</Link></li>
+            <li><Link to="/#why-us">Why Choose Us</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
 
         <div className="footer-col footer-services">
           <h3>Our Services</h3>
           <ul>
-            <li><a href="#services">DOT Compliance</a></li>
-            <li><a href="#services">Freight Dispatch</a></li>
-            <li><a href="#services">Fleet Management</a></li>
-            <li><a href="#services">Safety Audits</a></li>
-            <li><a href="#services">Route Planning</a></li>
+            <li><Link to="/services">DOT Compliance</Link></li>
+            <li><Link to="/services">Freight Dispatch</Link></li>
+            <li><Link to="/services">Fleet Management</Link></li>
+            <li><Link to="/services">Safety Audits</Link></li>
+            <li><Link to="/services">Route Planning</Link></li>
           </ul>
         </div>
 
@@ -56,11 +56,22 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <div className="container footer-bottom-content">
-          <p>&copy; {new Date().getFullYear()} FleetFast. All rights reserved.</p>
-          <p>Designed by <a href="#" style={{color: 'var(--accent-color)'}}>Compilego</a></p>
-        </div>
-      </div>
+  <div className="container footer-bottom-content">
+    <p>&copy; {new Date().getFullYear()} FleetFast Management. All rights reserved.</p>
+
+    <p>
+      Designed by :{" "}
+      <a
+        href="https://compilego.com"
+        target="_blank"
+        rel="noreferrer"
+        style={{ color: 'var(--accent-color)' }}
+      >
+        CompileGo Technologies
+      </a>
+    </p>
+  </div>
+</div>
     </footer>
   );
 };
